@@ -1,8 +1,8 @@
 ﻿<?php
-/* skrypt zawierający często używane funkcje w systemie */
+/* skrypt konfiguracjny dla systemu */
 /* (C) mgr inż. Bartłomiej Trojnar; (III) październik 2016 */
 //ustanowienie połączenia z MySQL
-@ $polacz = mysql_connect('localhost', 'root', 'ARla575mow');
+@ $polacz = mysql_connect('localhost', 'username', 'password');
 //jeżeli połączono - wybór bazy danych
 if($polacz) {
     mysql_query('SET CHARACTER SET latin2;');
