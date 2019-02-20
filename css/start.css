@@ -1,0 +1,215 @@
+/* -- Wyggląd strony startowej (głównej) galerii zdjęć ---------------------- */
+/* (C) mgr inż. Bartłomiej Trojnar; (II) marzec 2013 */
+/* -------------------------------------------------------------------------- */
+/* ---------- USTAWIENIE NAGŁÓWKA STRONY STARTOWEJ -------------------------- */
+body > header {
+	background:		#808080;
+	border-radius:	10px;
+	box-shadow:		0 0 20px #202020 inset;
+	color:			#ff7f00;
+	font-size:		1.6em;
+	height:			50px;
+	line-height:	50px;
+	margin:			13px 86px;
+	text-align:		center;
+}
+body > header img { display: none;}
+body > header p {
+	margin:		0 200px;
+	text-shadow: -2px -1px 0px #603000;
+}
+body > header div {
+	background:		#ccc;
+	border-radius:	10px;
+	width:			190px;
+}
+body > header div a {
+	color:		#4c4c4c;
+	text-shadow:none;
+}
+div#start {
+	box-shadow: 0 0 20px #808080 inset;
+	float:			left;
+	font-size:		0.8em;
+	letter-spacing:	1.5px;
+}
+div#version {
+	box-shadow: 0 0 20px #808080 inset;
+	color:			#4c4c4c;
+	float:			right;
+	font-size:		0.6em;
+	height:			31px;
+	line-height:	1em;
+	overflow:		hidden;
+	padding-top:	12px;
+	padding-bottom:	7px;
+}
+div#version p {
+	margin:		0;
+	text-shadow:none;
+}
+div#version p#c2 { display: none; }
+div#version:hover {
+	font-size:	0.45em;
+	line-height:1.33em;
+	padding:	2px 0 17px 0;
+}
+div#version:hover p#c1 { display: none; }
+div#version:hover p#c2 { display: block; }
+
+
+/* ---------- USTAWIENIE elementów ze strzałkami ---------------------------- */
+aside {
+	position:	absolute;
+	top:		0;
+	width:		75px;
+	height:		100%;
+	z-index:	11;
+}
+aside div {
+	background:	#808080;
+	height:		100%;
+	opacity:	0.5;
+	position:	relative;
+	text-align:	center;
+	top:		0;
+	width:		100%;
+	z-index:	12;
+}
+aside#strzalka_l {
+	left: 0;
+	background-image: -moz-linear-gradient( left, rgba(52,52,52,1), rgba(52,52,52,1), rgba(52,52,52,0), rgba(52,52,52,0) );
+	background-image: linear-gradient( left, rgba(52,52,52,1), rgba(52,52,52,1), rgba(52,52,52,0), rgba(52,52,52,0) );
+}
+aside#strzalka_p {
+	right: 0;
+	background-image: -moz-linear-gradient( left, rgba(52,52,52,0), rgba(52,52,52,0), rgba(52,52,52,1), rgba(52,52,52,1) );
+	background-image: linear-gradient( left, rgba(52,52,52,0), rgba(52,52,52,0), rgba(52,52,52,1), rgba(52,52,52,1) );
+}
+aside.aktywny:hover div { opacity: 0.8; }
+aside img {
+	left:		10px;
+	margin-top:	-67px;
+	position:	absolute;
+	right:		0;
+	top:		50%;
+	z-index:	13;
+}
+aside#strzalka_l img.l1 {
+	display:	none;
+}
+
+/* --------- główna część strony - ALBUMY ----------------------------------- */
+#albumy {
+	background:	#343434;
+	bottom:		10px;
+	left:		10px;
+	overflow:	hidden;
+	position:	absolute;
+	right:		10px;
+	top:		73px;
+}
+/* --------- ustawienie kolumn oraz ich nagłówków --------------------------- */
+div.column {
+	background:		#fff;
+	border-radius:	20px 20px 10px 10px;
+	box-shadow:		0 0 20px #444 inset;
+	bottom:			10px;
+	float:			left;
+	margin:			0 5px 0 76px;
+	position:		absolute;
+	top:			0px;
+	width:			190px;
+}
+div.column h1 {
+	background:		#808080;
+	border-radius:	10px;
+	box-shadow:		0 0 20px #202020 inset;
+	font-size:		2.3em;
+	height:			50px;
+	letter-spacing:	2px;
+	line-height:	50px;
+	margin:			0;
+	position:		relative;
+	text-align:		center;
+	text-shadow:	-2px -1px 0px #603000;
+	vertical-align:	middle;
+	z-index:		2;
+}
+div.column h1 a { color: #ff7f00; }
+
+
+/* --------- ustawienie strzałek w kolumnach -------------------------------- */
+div.column header, div.column footer {
+	background: transparent;
+	height:		50px;
+	margin:		0;
+	margin-top:	45px;
+	text-align: center;
+	width:		190px;
+}
+div.column img.g0, div.column img.g1, img.d0, img.d1 {
+	left:		0;
+	padding:	6px 47.5px;
+	position:	absolute;
+	z-index:	2;
+}
+div.column header img.g0, div.column header img.g1 {
+	top:		45px;
+}
+img.g1 { display: none;}
+div.column div.tlo, div.column div.nak {
+	margin-top:		-50px;
+	width:			100%;
+	height:			100%;
+	background:		#808080;
+	opacity:		0.5;
+	z-index:		2;
+}
+div.column header:hover div.tlo, div.column footer:hover div.tlo { opacity: 0.8; }
+div.column footer {
+	background:	transparent;
+	border-radius: 0 0 10px 10px;
+	bottom:		0;
+	height:		50px;
+	margin:		0;
+	position:	absolute;
+	text-align: center;
+	width:		190px;
+}
+div.column header p, div.column footer p { display: none; }
+div.column footer div.tlo, div.column footer div.nak {
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+}
+div.column footer img {
+    margin-top: 0;
+}
+
+/* --------- ustawienie list (punktów) z nazwami galerii -------------------- */
+div.column ul {
+	height:		260px;
+	list-style:	none;
+	margin:		0;
+	overflow:	hidden;
+	padding:	0;
+	position:	relative;
+	width:		100%;
+}
+div.column li {
+	margin:		auto;
+	text-align:	center;
+}
+div.column li a {
+	color:			#4c4c4c;
+	display:		table-cell;
+	height:			50px;
+	vertical-align:	middle;
+	width:			180px;
+}
+div.column li div {
+	width: 80%;
+	margin: auto;
+	border-bottom: 1px solid #888;
+}
+div.column li:hover				{ background-color: rgba(255, 127, 0, 0.5); }

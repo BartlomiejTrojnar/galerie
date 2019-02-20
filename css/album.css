@@ -1,0 +1,344 @@
+/* wygląd strony dla albumu zdjęć */
+/* (C) mgr inż. Bartłomiej Trojnar; (III) maj 2014 */
+/* -------------------------------------------------------------------------- */
+/* ----------- POZYCJA elementów na stronie --------------------------------- */
+body > header {	position: absolute;	top: 20px;	right: 225px;				left: 20px; height: 125px; }
+section#pokaz { position: absolute; top: 160px; right: 225px; bottom: 20px; left: 20px; }
+
+/* ---------- USTAWIENIA NAGŁÓWKA STRONY ------------------------------------ */
+body {
+	background:		#ddd;
+}
+body > header {
+	background:		#444;
+	border-radius:	10px;
+	box-shadow: 0 0 20px #202020 inset;
+	overflow:		hidden;
+}
+header aside {
+	background: transparent;
+	position:	absolute;
+	top:		0;
+	width:		60px;
+	z-index:	3;
+}
+header aside div {
+	position:	relative;
+	z-index:	2;
+}
+header aside img {
+	height:		116px;
+	position:	relative;
+	z-index:	0;
+}
+#strzalka_p {
+	right: 0;
+}
+header aside div.tlo {
+	background:	#808080;
+	height:		125px;
+	margin-top:	-120px;
+	opacity:	0.5;
+	position:	relative;
+	z-index:	1;
+}
+#strzalka_l:hover div.tlo, #strzalka_p:hover div.tlo {
+	opacity: 0.8;
+}
+#strzalka_l div.tlo, #strzalka_l div.nak, #strzalka_p div.tlo, #strzalka_p div.nak {
+	background:	#808080;
+	height:		125px;
+	position:	absolute;
+	margin-left:0px;
+	margin-top:	0;
+	opacity:	0.5;
+	top:		0;
+	width:		100%;
+	z-index:	1;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   pasek zdjęć w nagłówku strony   ------------------------ */
+header nav {
+	position:	absolute;
+	width:		1400px;
+	z-index:	2;
+}
+header nav div {
+	display:inline;
+	margin: 3px;
+}
+header a.ukryj {
+	display: none;
+}
+header nav img {
+	border:			2px solid #808080;
+	border-radius:	10px;
+	margin:			8px 3px;
+	max-width:		155px;
+	max-height:		105px;
+}
+header nav div:first-child {
+	margin-left: 65px;
+}
+header a.aktywny img {
+	border: 2px solid #ff7f00;
+	box-shadow: 0 0 8px #ff7f00;
+}
+header p { display: none; }
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   tabela z pokazem zdjęć - położenie i wymiary   --------- */
+section#pokaz {
+	background:		#fff;
+	border-radius:	10px;
+	box-shadow: 0 0 20px #808080 inset;
+	padding:		0;
+}
+#strzalka_l2, #strzalka_p2 {
+	background:	transparent;
+	bottom:		0;
+	position:	absolute;
+	top:		0;
+	width:		60px;
+	z-index:	3;
+}
+#strzalka_p2 {
+	padding-left:	3px;
+}
+#strzalka_l2 { border-radius: 10px 0 0 10px; }
+#strzalka_l2 div, #strzalka_p2 div {
+	position: relative;
+	z-index: 2;
+}
+#strzalka_p2, #strzalka_p2 div {
+	right: 0;
+	border-radius: 0 10px 10px 0;
+}
+#strzalka_l2 img, #strzalka_p2 img {
+	position: relative;
+	z-index: 0;
+}
+#strzalka_l2:hover div.tlo, #strzalka_p2:hover div.tlo { opacity: 0.8; }
+#strzalka_l2 div.tlo, #strzalka_l2 div.nak, #strzalka_p2 div.tlo, #strzalka_p2 div.nak {
+	background:		#808080;
+	border-radius:	10px 0 0 10px;
+	height:			100%;
+	margin-top:		0;
+	opacity:		0.5;
+	position:		absolute;
+	top:			0;
+	width:			100%;
+	z-index:		1;
+}
+#strzalka_l2 div.tlo, #strzalka_l2 div.nak { border-radius: 10px 0 0 10px; }
+#strzalka_p2 div.tlo, #strzalka_p2 div.nak { border-radius: 0 10px 10px 0; }
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   tabela z pokazem zdjęć - zawartość   ------------------- */
+div#zdjecia {
+	position:	absolute;
+	top:		20px;
+	right:		80px;
+	bottom:		60px;
+	left:		80px;
+	text-align:	center;
+}
+#zdjecia h2, #zdjecia p, a.zdjecie { display: none; }
+a.zdjecie img { padding: 0px; }
+a.active {
+	display: inline;
+	/* Skonfiguruj animację dla Firefoxa */	-moz-animation-duration:0.5s;	-moz-animation-name:spin;		-moz-animation-timing-function:linear;
+	/* Konfiguracja dla Chrome i Safari */ 	-webkit-animation-duration:0.5s;	-webkit-animation-name:spin;	-webkit-animation-timing-function:linear;
+}
+/* postęp animacji */
+@-moz-keyframes spin{
+	0%		{ opacity:0.0;	-moz-transform:scale(0.0);	}
+	30%		{ opacity:0.3;	-moz-transform:scale(0.3);	}
+	70%		{ opacity:0.7;	-moz-transform:scale(0.7);	}
+	100%	{ opacity:1.0;	-moz-transform:scale(1.0);	}
+}
+@-webkit-keyframes spin{
+	0%		{ opacity:0.0;	-webkit-transform:scale(0.0);	}
+	30%		{ opacity:0.3;	-webkit-transform:scale(0.3);	}
+	70%		{ opacity:0.7;	-webkit-transform:scale(0.7);	}
+	100%	{ opacity:1.0;	-webkit-transform:scale(1.0);	}
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   podpis pod zdjęciem   ---------------------------------- */
+aside#podpis {
+	position:	absolute;
+	left:		0;
+	right:		0;
+	bottom:		0;
+	height:		50px;
+	border-radius: 10px;
+
+	background:		#808080;
+	box-shadow:		0 0 20px #202020 inset;
+	font-family:	'Magra', 'Impact', 'Arial', sans-serif;
+	font-size:		0.8em;
+	color:			#ff7f00;
+	text-align:		center;
+	z-index:		3;
+}
+#podpis h2 {
+	font-weight:	bold;
+	margin:			auto;
+	text-shadow:	-1px -1px 0 #603000;
+}
+#podpis p{
+	margin:	auto;
+	color:	#ccc;
+}
+#licznik {
+	border-radius:	10px;
+	margin:			2px auto;
+	padding-bottom:	1px;
+	width:			20%;
+}
+#licznik, progress {
+	background:		#ccc;
+	color:			#4c4c4c;
+}
+progress {
+	border:		0;
+	position:	absolute;
+	height:		5px;
+	left:		80px;
+	z-index:	2;
+	width:		200px;
+}
+progress::-moz-progress-bar {
+	background-color: #333;
+	background-image:-moz-repeating-linear-gradient(top left -45deg, #ccc, #4c4c4c 10px, #ccc 20px);
+}
+#liczmale { top:	20px; }
+#liczduze { top:	140px; }
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   inne galerie w wybranym roku   ------------------------- */
+#ig {
+	overflow: hidden;
+}
+#ig li { position: relative; }
+#ig li:hover	{ background-color: rgba(255, 127, 0, 0.5); }
+#ig div			{ border-bottom: 1px solid #888; }
+#ig li:last-child div { border-bottom: 0; }
+#ig a			{ color: #4c4c4c; }
+#ig a:hover		{ color: #333; }
+#ig a.aktywny	{ color: #ff7f00; }
+
+/* ----------- MENU NA STRONIE (inne galerie w roczniku i do stron głównych)  ------------------- */
+/* ----------- położenie menu ------------------------------------------------------------------- */
+body > nav  {
+	background:		#fff;
+	box-shadow: 0 0 20px #808080 inset;
+	border-radius:	10px;
+	bottom:			20px;
+	color:			#808080;
+	overflow:		hidden;
+	position:		absolute;
+	right:			20px;
+	text-align:		center;
+	top:			20px;
+	width:			190px;
+}
+/* -------------------------------------------------------------------------- */
+/* ---------------   ogólne ustawienie list   ------------------------------- */
+body > nav ul {
+	list-style:	none;
+	padding:	0;
+	width:		190px;
+}
+body > nav li {
+	font-size:	1em;
+	margin:		auto;
+}
+body > nav li div {
+	margin:	auto;
+	width:	80%;
+}
+body > nav li a {
+	display:		table-cell;
+	height:			49px;
+	vertical-align:	middle;
+	width:			180px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   ustawienie 3 górnych łączy   --------------------------- */
+#gl	{
+	background:		#808080;
+	border-radius:	10px;
+	box-shadow: 0 0 20px #202020 inset;
+	height:			150px;
+	position:		absolute;
+	margin:			0;
+	text-shadow:	-1px -1px 0 #603000;
+	top:			0;
+	vertical-align:	middle;
+	z-index:		2;
+}
+#gl div			{ border-bottom: 1px solid #ccc; }
+#gl li:last-child div { border-bottom: 0; }
+#gl a			{ color: #ff7f00; font-size: 1.2em; }
+#gl a:hover		{ color: #ccc; }
+
+/* -------------------------------------------------------------------------- */
+/* ---------------   ustawienia nagłówka i stopki (ze strzałkami)   --------- */
+body > nav header {
+	background:		transparent;
+	border-radius:	10px 10px 0 0;
+	height:			50px;
+	margin:			0;
+	position:		absolute;
+	text-align:		center;
+	top:			150px;
+	width:			190px;
+}
+body > nav footer {
+	background:		transparent;
+	border-radius:	0 0 10px 10px;
+	bottom:			0;
+	height:			50px;
+	margin:			0;
+	position:		absolute;
+	text-align: 	center;
+	width:			190px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ----------   ustawienia obrazów (ze strzałkami) w nagłówku i stopce ------ */
+body > nav img {
+	left:		0;
+	padding:	6px 47.5px;
+	position:	absolute;
+	vertical-align:	middle;
+	z-index:	2;
+}
+img.g1, img.d0 { display: none;}
+body > nav footer img { margin-top: 0; }
+/* ---------------   ustawienia podmienianych teł dla obrazów   ------------- */
+div.tlo, div.nak {
+	background:	#808080;
+	height:		100%;
+	opacity:	0.5;
+	width:		100%;
+	z-index:	2;
+}
+header:hover div.tlo, footer:hover div.tlo { opacity: 0.8; }
+footer div.tlo, footer div.nak {
+	border-radius: 0 0 10px 10px;
+	margin: 0;
+}
+
+/* ---------------   ustawienia listy z albumami w bieżącym roczniku   ------ */
+#ig {
+	bottom:		50px;
+	position:	absolute;
+    margin: 0;
+	top:		200px;
+}

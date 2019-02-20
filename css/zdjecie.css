@@ -1,0 +1,47 @@
+/* wygląd strony dla pokazu zdjęć */
+/* (C) mgr inż. Bartłomiej Trojnar; (III) czerwiec 2014 */
+/* -------------------------------------------------------------------------- */
+body > img {
+	padding: 1% 5%;
+	max-width: 90%;
+	max-height: 90%;
+}
+#ilosc, #nr_zdjecia, #sciezka {
+	display: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------- USTAWIENIA STRZAŁEK DO ZMIANY ZDJĘCIA ------------------------- */
+aside {
+	height:		100%;
+	position:	absolute;
+	top:		0;
+	width:		75px;
+	z-index:	3;
+}
+aside div {
+	height:		100%;
+	top:		0;
+	text-align:	center;
+	z-index:	2;
+}
+aside div.tlo, aside div.nak {
+	background:	#808080;
+	height:		100%;
+	opacity:	0.5;
+	position:	absolute;
+	top:		0;
+	width:		100%;
+	z-index:	1;
+}
+aside#strzalka_l { left: 0; }
+aside#strzalka_p { right: 0; }
+aside#strzalka_l:hover div.tlo, aside#strzalka_p:hover div.tlo {
+	opacity: 0.8;
+}
+aside img {
+	position:	relative;
+	top:		40%;
+	z-index:	3;
+}

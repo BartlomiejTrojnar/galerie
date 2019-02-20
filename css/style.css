@@ -1,0 +1,34 @@
+/* (C) mgr inż. Bartłomiej Trojnar; (I) kwiecień 2013 */
+/* -------------------------------------------------------------------------- */
+/* ----- PODSTAWOWE USTAWIENIA STRONY --------------------------------------- */
+@font-face {
+	font-family:	'Passion One';
+	font-style:		normal;
+	font-weight:	400;
+	src:			local("Passion One"), url('/bazy/PassionOne-Regular.ttf');
+}
+body {
+	background:	#343434;
+
+	font-family:'Passion One', 'Magra', 'Impact', 'Arial', sans-serif;
+	margin:		0;
+	padding:	0;
+}
+a {
+	text-decoration: none;
+	color: #808080;
+}
+body > footer {
+	position:		absolute;
+	bottom:			170px;
+	left:			-177px;
+	color:			#fff;
+	font-family:	'Magra', sans-serif;
+	font-size:		16px;
+	z-index:		3;
+	transform:		rotate(-90deg);
+	-o-transform:	rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-ms-transform:	rotate(-90deg);
+	-moz-transform:	rotate(-90deg);
+}

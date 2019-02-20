@@ -1,0 +1,140 @@
+/* wygląd strony dla kolekcji zdjęć */
+/* (C) mgr inż. Bartłomiej Trojnar; (III) marzec 2013 */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* ---------- USTAWIENIA NAGŁÓWKA STRONY ------------------------------------ */
+h1 {
+	background:		#808080;
+	border-radius:	10px;
+	box-shadow:		0 0 20px #202020 inset;
+	color:			#ff7f00;
+	font-size:		40px;
+	font-weight:	400;
+	height:			50px;
+	line-height:	50px;
+	margin:			10px 85px;
+	text-align:		center;
+	text-shadow:	-2px -1px 0px #603000;
+	vertical-align:	middle;
+}
+body > header h2 {
+	background:		#ccc;
+	border-radius:	10px;
+	box-shadow:		0 0 20px #808080 inset;
+	font-size:		20px;
+	height:			50px;
+	letter-spacing:	1.5px;
+	line-height:	50px;
+	margin:			0 85px;
+	text-align:		center;
+	width:			190px;
+}
+h2#r1 { float:	left; }
+h2#r2 { float:	right;}
+body > header h2 a {
+	color:			#4c4c4c;
+	font-size:		1em;
+	text-shadow:	none;
+	vertical-align: middle;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------- USTAWIENIA SEKCJI Z WYŚWIETLANYMI ALBUMAMI -------------------- */
+section#albumy {
+	background:		#808080;
+	border-radius:	10px;
+	bottom:			10px;
+	box-shadow:		inset 5px 5px 10px #444, inset -5px -5px 10px #444;
+	padding:		20px 10px 20px 20px;
+	position:		absolute;
+	left:			85px;
+	right:			85px;
+	top:			70px;
+	overflow-y:		scroll;
+}
+a.album {
+	background:		#fff;
+	border-radius:	10px;
+	float:			left;
+	height:			120px;
+	margin:			5px;
+	position:		relative;
+	width:			300px;
+}
+section#albumy a.album:last-child {
+	margin-bottom:	20px;
+}
+a.album table	{
+	border-spacing:	0;
+	height:			100%;
+	width:			100%;
+}
+a.album table:hover	{
+	background-color: rgba(255, 127, 0, 0.5);
+	border-radius: 10px;
+}
+a.album td		{ padding:		0;}
+td.image		{
+	max-width:	170px;
+	text-align:	center;
+}
+td.image img {
+	border-radius:	10px;
+	max-height:		110px;
+	max-width:		160px;
+	padding:		0 5px;
+	vertical-align:	middle;
+}
+a.album td.podpis {
+	color:			#343434;
+	font-size:		16px;
+	height:			96px;
+	padding-right:	5px;
+	text-align:		center;
+	vertical-align: middle;
+	width:			50%;
+}
+td.licznik {
+	background:		#ccc;
+	border-radius:	10px;
+	color:			#343434;
+	font-size:		14px;
+	line-height:	20px;
+	text-align:		center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------- USTAWIENIA STRZAŁEK DO ZMIANY KOLEKCJI ------------------------ */
+aside {
+	height:		100%;
+	position:	absolute;
+	top:		0;
+	width:		75px;
+	z-index:	3;
+}
+aside div {
+	height:		100%;
+	top:		0;
+	text-align:	center;
+	z-index:	2;
+}
+aside div.tlo, aside div.nak {
+	background:	#808080;
+	height:		100%;
+	opacity:	0.5;
+	position:	absolute;
+	top:		0;
+	width:		100%;
+	z-index:	1;
+}
+aside#strzalka_l { left: 0; }
+aside#strzalka_p { right: 0; }
+aside#strzalka_l:hover div.tlo, aside#strzalka_p:hover div.tlo {
+	opacity: 0.8;
+}
+aside img {
+	position:	relative;
+	top:		40%;
+	z-index:	3;
+}
